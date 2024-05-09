@@ -1,0 +1,34 @@
+/* Estilo general del navbar */
+.navbar {
+  background-color: #f8f9fa; /* Cambia el color de fondo */
+  border-radius: 5px; /* Añade bordes redondeados */
+  padding: 10px; /* Añade un espacio interior */
+}
+
+/* Estilo del enlace de la marca del navbar */
+.navbar-brand {
+  color: #343a40; /* Cambia el color del texto */
+  font-weight: bold; /* Hace el texto más audaz */
+}
+
+/* Estilo del botón del navbar */
+.navbar-toggler {
+  border-color: #343a40; /* Cambia el color del borde */
+}
+
+/* Estilo de los enlaces del navbar */
+.navbar-nav .nav-link {
+  color: #343a40; /* Cambia el color del texto */
+  font-weight: bold; /* Hace el texto más audaz */
+}
+
+/* Estilo del enlace activo del navbar */
+.navbar-nav .nav-link.active {
+  color: #007bff; /* Cambia el color del texto */
+}
+
+/* Estilo del enlace deshabilitado del navbar */
+.navbar-nav .nav-link.disabled {
+  color: #6c757d; /* Cambia el color del texto */
+  pointer-events: none; /* Deshabilita los clics en el enlace */
+}

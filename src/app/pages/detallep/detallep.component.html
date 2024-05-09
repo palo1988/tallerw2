@@ -1,0 +1,18 @@
+<div class="container"
+    style="display: flex; justify-content: center; align-items: center; height: 100vh; background-color: #f0f0f0;">
+    <div class="card"
+        style="width: 300px; background-color: white; padding: 20px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+        <img src="{{album.image}}" class="card-img-top" alt="Fissure in Sandstone"
+            style="width: 150px; margin: 0 auto;" />
+        <div class="card-body">
+            <h5 class="card-title" style="text-align: center;">Nombre: {{album.nombre}}</h5>
+
+            <p class="card-text">Artista: {{album.artista}}</p>
+            <p class="card-text">Año: {{album.anio}}</p>
+            <p class="card-text">Precio: {{album.precio}}</p>
+
+            <a routerLink="/producto" class="btn btn-primary"
+                style="display: block; margin: 0 auto; width: 100px; text-align: center;">Regresar</a>
+        </div>
+    </div>
+</div>

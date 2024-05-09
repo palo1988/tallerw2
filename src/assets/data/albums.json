@@ -1,0 +1,58 @@
+{
+"album": [
+  {
+    "id": "1",
+    "nombre": "The wall",
+    "artista": "Pink Floyd",
+    "genero": "Rock transgresivo",
+    "anio": "1982",
+    "image": "https://i5.walmartimages.com/asr/75bbcf45-4fb4-4976-80a3-989656462985.994c261afa2623b13dcf683fba0d3d13.jpeg?odnHeight=768&odnWidth=768&odnBg=FFFFFF",
+    "precio": 20.99
+  },
+  {
+    "id": "2",
+    "nombre": "Trueno Tierra",
+    "artista": "La Renga",
+    "genero": "Hard-Rock",
+    "anio": "2014",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcShhLqnqYWE82aaUF0pIfFiqnt1EaFh0Hd0wXlIWm0csA&s",
+    "precio": 15.49
+  },
+  {
+    "id": "3",
+    "nombre": "AM",
+    "artista": "Arctic Monkeys",
+    "genero": "indie-rock",
+    "anio": "2013",
+    "image": "https://es.mathworks.com/matlabcentral/communitycontests/uploaded_files/6698/image.png",
+    "precio": 18.75
+  },
+  {
+    "id": "4",
+    "nombre": "I love u",
+    "artista": "the neighbourhood",
+    "genero": "indie",
+    "anio": "2013",
+    "image": "https://i.scdn.co/image/ab67616d0000b2738265a736a1eb838ad5a0b921",
+    "precio": 12.99
+  },
+  {
+    "id": "5",
+    "nombre": "Linkin Park",
+    "artista": "Linkin Park",
+    "genero": "nu-metal",
+    "anio": "2000",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQuJNQqN0rlNDLaqgxC8881tr-Jp9ehRcgj_e329iMh2A&s",
+    "precio": 21.99
+  },
+  {
+    "id": "6",
+    "nombre": "Atlas",
+    "artista": "the score",
+    "genero": "alternativo",
+    "anio": "2017",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTArj7PpGo7bUNuJ9_OYZOfkkltEVXVPFZiaLkplLA2RA&s",
+    "precio": 17.25
+  }
+]
+}
