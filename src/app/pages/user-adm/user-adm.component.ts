@@ -1,46 +1,42 @@
 import { Component, inject } from '@angular/core';
-import { ProductoservicioService } from '../../services/productoservicio.service';
+import { UserService } from '../../services/user.service';
 import { FormsModule } from '@angular/forms';
 import { RouterLink } from '@angular/router';
 
 @Component({
-  selector: 'app-formulario',
+  selector: 'app-user-adm',
   standalone: true,
   imports: [FormsModule,RouterLink],
-  templateUrl: './formulario.component.html',
-  styleUrl: './formulario.component.css'
+  templateUrl: './user-adm.component.html',
+  styleUrl: './user-adm.component.css'
 })
-export class FormularioComponent {
-  servicio = inject(ProductoservicioService)
-
-  albums : any;
- id:any;
- nombre:any;
-artista:any;
-genero:any;
-anio:any;
-image:any;
-precio:any;
-  ngOnInit(){
-    this.servicio.getAlbums().subscribe( a =>{
-      this.albums = a
-    } )
+export class UserAdmComponent {
+  
+  servicio=inject(UserService)
+  users:any
+  id:any;
+  email:any;
+  password:any;
+  type:any;
+  ngOnInit(): void {
+    this.servicio.getUsers().subscribe(u=>{
+      this.users=u
+    })
   }
-
   eliminar(id:any){
-    this.servicio.deleteAlbumID(id).subscribe()
+    this.servicio.deleteUserID(id).subscribe()
     window.location.reload()
   }
   guardar( datos: any){
     console.log(datos.value);
-    this.servicio.postAlbum(datos.value).subscribe()
+    this.servicio.postUsers(datos.value).subscribe()
 
     //recarga la página
     window.location.reload()
 
   }
   editar(datos:any){
-    this.servicio.putAlbums(datos.value).subscribe()
+    this.servicio.putUsers(datos.value).subscribe()
     window.location.reload()
   }
   //ruta=inject(Router)
@@ -50,5 +46,6 @@ precio:any;
     localStorage.removeItem('token'); 
     window.location.href='/login' 
   }
+
 
 }

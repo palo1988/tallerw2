@@ -1,1 +1,111 @@
-<p>formulario works!</p>
+<div class="container">
+    <h2>GESTION DISCOS</h2>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" routerLink="/formulario">Tienda de Discos</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/users">Usuarios</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <hr>
+    <hr>
+    <hr>
+
+    <table class="table table-hover">
+        <thead>
+            <tr>
+
+                <th scope="col">ID</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Artista</th>
+                <th scope="col">Género</th>
+                <th scope="col">año</th>
+
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            @for(item of albums; track item){
+            <tr>
+
+                <td>{{item.id}}</td>
+                <td>{{item.nombre}}</td>
+                <td>{{item.artista}}</td>
+                <td>{{item.genero}}</td>
+                <td>{{item.anio}}</td>
+
+
+                <td><button class="btn-primary" [routerLink]="['/detallep', item.id]">Detalles</button>
+                    <button class="btn btn-danger" (click)="eliminar(item.id)">Eliminar</button>
+
+            </tr>
+            }
+        </tbody>
+    </table>
+
+</div>
+<tr></tr>
+<hr>
+<hr>
+<div class="container">
+    <h2>agregar producto</h2>
+    <form (ngSubmit)="guardar(formulario)" #formulario="ngForm">
+        <label>Ingresar ID</label>
+        <input type="text" name="id" [(ngModel)]="id" class="form-control">
+        <label>Ingresar Nombre</label>
+        <input type="text" name="nombre" [(ngModel)]="nombre" class="form-control">
+        <label>Ingresar Artista</label>
+        <input type="text" name="artista" [(ngModel)]="artista" class="form-control">
+        <label>Ingresar Genero</label>
+        <input type="text" name="genero" [(ngModel)]="genero" class="form-control">
+        <label>Ingresar Año</label>
+        <input type="text" name="anio" [(ngModel)]="anio" class="form-control">
+        <label>Ingresar Imagen</label>
+        <input type="text" name="image" [(ngModel)]="image" class="form-control">
+        <label>Ingresar Precio</label>
+        <input type="number" name="precio" [(ngModel)]="precio" class="form-control">
+        <br>
+        <button type="submit" class="btn btn-primary">Guardar</button>
+    </form>
+
+</div>
+<tr>
+    <hr>
+    <hr>
+</tr>
+<div class="container">
+    <h2>editar producto</h2>
+    <form (ngSubmit)="editar(formulario)" #formulario="ngForm">
+        <label>Ingresar ID</label>
+        <input type="text" name="id" [(ngModel)]="id" class="form-control">
+        <label>Ingresar Nombre</label>
+        <input type="text" name="nombre" [(ngModel)]="nombre" class="form-control">
+        <label>Ingresar Artista</label>
+        <input type="text" name="artista" [(ngModel)]="artista" class="form-control">
+        <label>Ingresar Genero</label>
+        <input type="text" name="genero" [(ngModel)]="genero" class="form-control">
+        <label>Ingresar Año</label>
+        <input type="text" name="anio" [(ngModel)]="anio" class="form-control">
+        <label>Ingresar Imagen</label>
+        <input type="text" name="image" [(ngModel)]="image" class="form-control">
+        <label>Ingresar Precio</label>
+        <input type="number" name="precio" [(ngModel)]="precio" class="form-control">
+        <br>
+        <button type="submit" class="btn btn-primary">Guardar</button>
+    </form>
+</div>
+<br>
+<br>
+<div class="container">
+    <div>
+        <button (click)="logout()" class="btn btn-primary">Cerrar sesión</button>
+    </div>
+</div>

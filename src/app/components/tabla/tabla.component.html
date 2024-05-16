@@ -1,28 +1,86 @@
-<table class="table table-hover">
-    <thead>
-        <tr>
-            <th>ID</th>
-            <th>Nombre</th>
-            <th>Artista</th>
-            <th>Género</th>
-            <th>Año</th>
+<div class="container">
+    <h2>FILTRO PRECIO</h2><br>
 
-            <th>Acciones</th>
-        </tr>
-    </thead>
-    <tbody>
-        @for(item of albums; track item){
-        <tr>
-            <td>{{item.id}}</td>
-            <td>{{item.nombre}}</td>
-            <td>{{item.artista}}</td>
-            <td>{{item.genero}}</td>
-            <td>{{item.anio}}</td>
+    <label for="">Valor máximo</label>
+    <input type="text" class="form-control" name="valorMaximo" [(ngModel)]=valorMaximo>
+    <label for="">Valor minimo</label>
+    <input type="text" class="form-control" name="valorMinimo" [(ngModel)]=valorMinimo>
+    <hr>
+    <table class="table table-hover">
+        <thead>
+            <tr>
+
+                <th scope="col">ID</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Artista</th>
+                <th scope="col">Género</th>
+                <th scope="col">año</th>
+
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            @for(item of albums; track item){
+            <tr>
+                @if (item.precio<=valorMaximo &&item.precio>=valorMinimo){
+                    <td>{{item.id}}</td>
+                    <td>{{item.nombre}}</td>
+                    <td>{{item.artista}}</td>
+                    <td>{{item.genero}}</td>
+                    <td>{{item.anio}}</td>
 
 
-            <td><button class="btn-primary" [routerLink]="['/detallep', item.id]">Detalles</button>
+                    <td><button class="btn-primary" [routerLink]="['/detallep', item.id]">Detalles</button>
+                        }
+            </tr>
+            }
+        </tbody>
+    </table>
 
-        </tr>
-        }
-    </tbody>
-</table>
+</div>
+<hr>
+
+
+<div class="container">
+    <h2>BUSCADOR POR GÉNERO</h2>
+    <input type="text" class="form-control" name="valorMinimo" [(ngModel)]=buscador>
+
+    <table class="table table-hover">
+        <thead>
+            <tr>
+
+                <th scope="col">ID</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Artista</th>
+                <th scope="col">Género</th>
+                <th scope="col">año</th>
+
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            @for(item of albums; track item){
+            <tr>
+                @if (item.genero===buscador){
+                <td>{{item.id}}</td>
+                <td>{{item.nombre}}</td>
+                <td>{{item.artista}}</td>
+                <td>{{item.genero}}</td>
+                <td>{{item.anio}}</td>
+
+
+                <td><button class="btn-primary" [routerLink]="['/detallep', item.id]">Detalles</button>
+                    }
+            </tr>
+            }
+        </tbody>
+    </table>
+
+</div>
+<br>
+<br>
+<div class="container">
+    <div>
+        <button (click)="logout()" class="btn btn-primary">Cerrar sesión</button>
+    </div>
+</div>

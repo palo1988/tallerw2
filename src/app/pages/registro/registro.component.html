@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-label {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="mb-4">Registro</h1>
+
+        <form (ngSubmit)="registro(formulario)" #formulario="ngForm">
+            <div class="form-group">
+                <label for="email" class="form-label">Email:</label>
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="basic-addon1">📧</span>
+                    </div>
+                    <input type="email" class="form-control" placeholder="Email" name="email" [(ngModel)]="email"
+                        required>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="type" class="form-label">Tipo de usuario:</label>
+                <select name="type" [(ngModel)]="type" class="form-control" required>
+                    <option value="user">Usuario</option>
+                    <option value="admin">Administrador</option>
+                    <option value="visitante">Visitante</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="password" class="form-label">Contraseña:</label>
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="basic-addon2">🔑</span>
+                    </div>
+                    <input type="password" class="form-control" placeholder="Contraseña" name="password"
+                        [(ngModel)]="password" required>
+                </div>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-block">Registrar</button>
+        </form>
+        <div class="text-center mt-3">
+            <a routerLink="/login">¿Tienes una cuenta ? inicia sesión</a>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>

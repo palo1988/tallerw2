@@ -20,5 +20,14 @@ export class ProductoservicioService {
     deleteAlbumID(id: any):Observable<any>{
       return this.http.delete(`${this.API_ALBUMS}/${id}`)
     }
+     //////// GUARDAR - POST /////////
+  postAlbum(album: JSON): Observable <any>{
+    return this.http.post(this.API_ALBUMS, album)
+  }
+
+  ////////// EDITAR - PUT ///////////
+  putAlbums(album:any):Observable <any> {
+    return this.http.put(`${this.API_ALBUMS}/${album.id}`, album)
+  }
   
 }
