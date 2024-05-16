@@ -9,13 +9,14 @@ import { LoginComponent } from './pages/login/login.component';
 import { loginGuard } from './guards/login.guard';
 import { RegistroComponent } from './pages/registro/registro.component';
 import { UserAdmComponent } from './pages/user-adm/user-adm.component';
+import { formularioGuard } from './guards/formulario.guard';
 
 export const routes: Routes = [
 {path:'home',component:HomeComponent},
 {path:'nosotros',component:NosotrosComponent},
 {path:'producto',component:ProductoServiciosComponent},
 {path:"detallep/:idProduct",component:DetallepComponent},
-{path:"formulario",component:FormularioComponent},
+{path:"formulario",component:FormularioComponent,canActivate:[formularioGuard]},
 {path:'login',component:LoginComponent,canActivate:[loginGuard]},
 {path:'registro',component:RegistroComponent},
 {path:'users',component:UserAdmComponent},
