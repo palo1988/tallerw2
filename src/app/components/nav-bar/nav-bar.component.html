@@ -9,7 +9,25 @@
             <div class="navbar-nav">
                 <a class="nav-link active" aria-current="page" routerLink="home">Home</a>
 
+                @if (visualizarUs=='true') {
+                <a class="nav-link" routerLink="carrito">Carrito</a>
+                <a class="nav-link" routerLink="users">Usuarios</a>
 
+                <div>
+                    <button (click)="logout()" class="btn btn-primary">Cerrar sesión</button>
+                </div>
+                }
+                @if (visualizarAdm=='true') {
+
+                <a class="nav-link" routerLink="carrito">Carrito</a>
+                <div>
+                    <button (click)="logout()" class="btn btn-primary">Cerrar sesión</button>
+                </div>
+                }
+                @if (visualizarAdm!='true'&&visualizarUs!='true') {
+                <a class="nav-link active" aria-current="page" routerLink="/login">LOGIN</a>
+
+                }
             </div>
         </div>
     </div>

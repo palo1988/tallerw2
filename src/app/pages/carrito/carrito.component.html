@@ -1,0 +1,98 @@
+<div class="container">
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Artista</th>
+                <th scope="col">Género</th>
+                <th scope="col">Año</th>
+                <th scope="col">Imagen</th>
+                <th scope="col">Precio</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of albums">
+                <td>{{ item.id }}</td>
+                <td>{{ item.nombre }}</td>
+                <td>{{ item.artista }}</td>
+                <td>{{ item.genero }}</td>
+                <td>{{ item.anio }}</td>
+                <td><img [src]="item.image" style="width: 200px;" alt=""></td>
+                <td>{{ item.precio }}</td>
+                <td>
+                    <button class="btn btn-success" (click)="agregarAlCarrito(item)">Agregar al Carrito</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2>Carrito de Compras</h2>
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Artista</th>
+
+                <th scope="col">Imagen</th>
+                <th scope="col">Precio</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of carrito">
+                <td>{{ item.id }}</td>
+                <td>{{ item.nombre }}</td>
+                <td>{{ item.artista }}</td>
+
+                <td><img [src]="item.image" style="width: 100px;" alt=""></td>
+                <td>{{ item.precio }}</td>
+                <td>
+                    <button class="btn btn-danger" (click)="eliminarDelCarrito(item.id)">Eliminar del Carrito</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <hr>
+
+    <hr>
+    <div class="modal fade" id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel"
+        tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalToggleLabel">total</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    El total a pagar es : <h2>$ {{ totalPrecioCarrito() *1.15}}</h2>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-primary" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal"
+                        data-bs-dismiss="modal">Open second modal</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="exampleModalToggle2" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2"
+        tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalToggleLabel2">Modal 2</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    Hide this modal and show the first with the button below.
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-primary" data-bs-target="#exampleModalToggle" data-bs-toggle="modal"
+                        data-bs-dismiss="modal">Back to first</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <a class="btn btn-primary" data-bs-toggle="modal" href="#exampleModalToggle" role="button">TOTAL a pagar</a>
+</div>

@@ -75,10 +75,10 @@
       "id": 3
     },
     {
-      "email": "carla@mail.com",
-      "password": "$2a$10$WqS.bgHiUHbimPU83Mj8lersrxRAeaQ8fqiai7ZtJfsJ9g6dBVDxG",
-      "type": "visitante",
-      "id": 4
+      "id": 4,
+      "email": "carla1@mail.com",
+      "type": "admin",
+      "password": "$2a$10$nlrreRf64RjFwahcJSa3W.2mod89eLeyw5AF6VRMmj5eV3qPztsSq"
     }
   ]
 }

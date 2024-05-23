@@ -1,7 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { ProductoservicioService } from '../../services/productoservicio.service';
 import { FormsModule } from '@angular/forms';
-import { RouterLink } from '@angular/router';
+import { ActivatedRoute, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-formulario',
@@ -12,7 +12,7 @@ import { RouterLink } from '@angular/router';
 })
 export class FormularioComponent {
   servicio = inject(ProductoservicioService)
-
+  ruta = inject(ActivatedRoute)
   albums : any;
  id:any;
  nombre:any;
@@ -21,12 +21,30 @@ genero:any;
 anio:any;
 image:any;
 precio:any;
-  ngOnInit(){
+ 
+ngOnInit(){
     this.servicio.getAlbums().subscribe( a =>{
       this.albums = a
     } )
   }
-
+/*
+  ngOnInit() {
+    this.ruta.params.subscribe(r => {
+      console.log(r);
+      
+      this.servicio.getPersonaInfo(r['idProduct']).subscribe(p => {
+        this.id = p.id
+        this.nombre = p.nombre
+        this.artista = p.artista
+        this.genero= p.genero
+        this.anio= p.anio
+        this.image= p.image
+        this.precio= p.precio
+      })
+    })
+    
+  }
+*/
   eliminar(id:any){
     this.servicio.deleteAlbumID(id).subscribe()
     window.location.reload()

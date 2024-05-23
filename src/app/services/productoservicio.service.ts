@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 export class ProductoservicioService {
 
   constructor(private http: HttpClient) { }
-  private API_ALBUMS="http://localhost:3000/album";
+  private API_ALBUMS="http://localhost:9090/album";
   getAlbums(): Observable <any>{
     return this.http.get( this.API_ALBUMS)
   }

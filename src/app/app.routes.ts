@@ -10,6 +10,8 @@ import { loginGuard } from './guards/login.guard';
 import { RegistroComponent } from './pages/registro/registro.component';
 import { UserAdmComponent } from './pages/user-adm/user-adm.component';
 import { formularioGuard } from './guards/formulario.guard';
+import { CarritoComponent } from './pages/carrito/carrito.component';
+import { carritoGuard } from './guards/carrito.guard';
 
 export const routes: Routes = [
 {path:'home',component:HomeComponent},
@@ -20,6 +22,7 @@ export const routes: Routes = [
 {path:'login',component:LoginComponent,canActivate:[loginGuard]},
 {path:'registro',component:RegistroComponent},
 {path:'users',component:UserAdmComponent},
+{path:'carrito',component:CarritoComponent,canActivate:[carritoGuard]},
 
 
 {path: '',redirectTo:"home",pathMatch:'full'},
